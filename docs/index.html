@@ -7,7 +7,8 @@
   <title>FamilyShield — AI-Powered Family Safety Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
     rel="stylesheet">
   <style>
     *,
@@ -25,35 +26,38 @@
     }
 
     :root {
-      --bg: #f0f2f1;
+      --bg: #f2f4f1;
       --panel: rgba(255, 255, 255, 0.85);
       --panel-solid: #ffffff;
-      --ink: #0e1210;
-      --muted: #5a6560;
-      --line: rgba(0, 0, 0, 0.08);
-      --brand: #10b981;
-      --brand-strong: #059669;
-      --brand-glow: rgba(16, 185, 129, 0.2);
-      --accent: #ef4444;
-      --purple: #7c3aed;
-      --purple-strong: #6d28d9;
-      --warn: #f59e0b;
-      --soft: rgba(16, 185, 129, 0.06);
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.12);
-      --shadow-xl: 0 40px 80px rgba(0, 0, 0, 0.15);
+      --ink: #0d1512;
+      --muted: #586359;
+      --line: rgba(13, 33, 22, 0.09);
+      --brand: #0d8f63;
+      --brand-strong: #096b4a;
+      --brand-glow: rgba(13, 143, 99, 0.22);
+      --accent: #d1483b;
+      --purple: #6d4fd6;
+      --purple-strong: #5738b8;
+      --warn: #c17817;
+      --soft: rgba(13, 143, 99, 0.07);
+      --shadow-sm: 0 1px 2px rgba(13, 33, 22, 0.04), 0 4px 10px rgba(13, 33, 22, 0.03);
+      --shadow-md: 0 4px 12px rgba(13, 33, 22, 0.05), 0 14px 32px rgba(13, 33, 22, 0.07);
+      --shadow-lg: 0 8px 20px rgba(13, 33, 22, 0.06), 0 30px 64px rgba(13, 33, 22, 0.10);
+      --shadow-xl: 0 16px 32px rgba(13, 33, 22, 0.08), 0 48px 96px rgba(13, 33, 22, 0.14);
       --radius-sm: 8px;
       --radius-md: 12px;
       --radius-lg: 16px;
       --radius-xl: 24px;
+      --display: 'Fraunces', Georgia, serif;
       --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(ellipse 900px 480px at 12% -8%, rgba(13, 143, 99, 0.05), transparent 60%),
+        var(--bg);
       color: var(--ink);
       line-height: 1.6;
       overflow-x: hidden;
@@ -127,11 +131,13 @@
       align-items: center;
       gap: 10px;
       flex-shrink: 0;
-      font-size: 20px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 21px;
+      font-weight: 600;
       color: var(--ink);
       text-decoration: none;
       white-space: nowrap;
+      letter-spacing: -0.01em;
     }
 
     .nav-brand svg {
@@ -329,16 +335,14 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--brand);
+      padding: 7px 16px 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-strong);
       background: var(--soft);
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(13, 143, 99, 0.2);
       border-radius: 50px;
-      margin-bottom: 24px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+      margin-bottom: 26px;
     }
 
     .hero-badge .dot {
@@ -362,14 +366,17 @@
     }
 
     .hero h1 {
-      font-size: clamp(36px, 5vw, 60px);
-      font-weight: 900;
-      line-height: 1.1;
+      font-family: var(--display);
+      font-size: clamp(38px, 5.4vw, 64px);
+      font-weight: 600;
+      font-optical-sizing: auto;
+      line-height: 1.06;
       margin-bottom: 20px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .hero h1 .gradient-text {
+      font-style: italic;
       background: linear-gradient(135deg, var(--brand), var(--purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -576,8 +583,9 @@
     }
 
     .preview-greeting h3 {
-      font-size: 16px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
     }
 
     .preview-card {
@@ -707,6 +715,80 @@
       }
     }
 
+    /* ─── Problem ─── */
+    .problem {
+      padding: 100px 0;
+      background: linear-gradient(180deg, rgba(239, 68, 68, 0.04), transparent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .pain-card {
+      background: var(--panel-solid);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      position: relative;
+      transition: all 0.4s var(--spring);
+    }
+
+    .pain-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(209, 72, 59, 0.3);
+    }
+
+    .pain-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      background: #fff;
+      border: 1.5px solid rgba(209, 72, 59, 0.35);
+      box-shadow: inset 0 0 0 5px rgba(209, 72, 59, 0.07);
+      margin-bottom: 22px;
+    }
+
+    .pain-card h3 {
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      letter-spacing: -0.005em;
+    }
+
+    .pain-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .problem-answer {
+      text-align: center;
+      max-width: 640px;
+      margin: 48px auto 0;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      padding: 24px 32px;
+      background: rgba(16, 185, 129, 0.07);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-lg);
+    }
+
+    .problem-answer strong {
+      color: var(--brand-strong);
+    }
+
     /* ─── Features ─── */
     .features {
       padding: 100px 0;
@@ -722,24 +804,23 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--brand);
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--brand-strong);
       background: var(--soft);
-      border: 1px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(13, 143, 99, 0.2);
       border-radius: 50px;
-      margin-bottom: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      margin-bottom: 18px;
     }
 
     .section-header h2 {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 900;
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 600;
       line-height: 1.15;
       margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .section-header p {
@@ -777,9 +858,9 @@
     }
 
     .feature-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
-      border-color: rgba(16, 185, 129, 0.2);
+      border-color: rgba(13, 143, 99, 0.22);
     }
 
     .feature-card:hover::before {
@@ -821,9 +902,11 @@
     }
 
     .feature-card h3 {
-      font-size: 18px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 19px;
+      font-weight: 600;
       margin-bottom: 10px;
+      letter-spacing: -0.005em;
     }
 
     .feature-card p {
@@ -867,8 +950,9 @@
     }
 
     .step h3 {
-      font-size: 16px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
       margin-bottom: 8px;
     }
 
@@ -904,11 +988,12 @@
     }
 
     .showcase-content h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 900;
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
       line-height: 1.15;
       margin-bottom: 20px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .showcase-content p {
@@ -1034,8 +1119,9 @@
     }
 
     .fd-greeting h3 {
-      font-size: 20px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 21px;
+      font-weight: 600;
     }
 
     .fd-family-card {
@@ -1076,8 +1162,9 @@
     }
 
     .fd-family-title h4 {
-      font-size: 15px;
-      font-weight: 800;
+      font-family: var(--display);
+      font-size: 16px;
+      font-weight: 600;
     }
 
     .fd-family-title small {
@@ -1215,6 +1302,83 @@
       white-space: nowrap;
     }
 
+    /* ─── FAQ ─── */
+    .faq {
+      padding: 100px 0;
+      background: var(--panel-solid);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--panel-solid);
+      border: 1.5px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .faq-item[open] {
+      border-color: rgba(13, 143, 99, 0.32);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 24px;
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--brand-strong);
+      background: var(--soft);
+      transition: transform 0.3s var(--spring), background 0.2s ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(135deg);
+      background: rgba(13, 143, 99, 0.14);
+    }
+
+    .faq-item p {
+      padding: 0 24px 22px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-item p strong {
+      color: var(--ink);
+    }
+
     /* ─── CTA ─── */
     .cta {
       padding: 100px 0;
@@ -1235,10 +1399,12 @@
     }
 
     .cta h2 {
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 900;
+      font-family: var(--display);
+      font-size: clamp(28px, 4vw, 50px);
+      font-weight: 600;
+      line-height: 1.1;
       margin-bottom: 16px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
     }
 
     .cta p {
@@ -1276,8 +1442,9 @@
       gap: 10px;
       margin-bottom: 16px;
       color: #fff;
-      font-weight: 800;
-      font-size: 18px;
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 19px;
     }
 
     .footer-brand svg {
@@ -1399,6 +1566,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .pain-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
       .steps {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -1507,6 +1678,10 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
+      .pain-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .steps {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -1589,9 +1764,11 @@
         FamilyShield
       </a>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#problem">Problem</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#dashboard-preview">Dashboard</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#cta" class="nav-mobile-cta">Get Started</a></li>
       </ul>
       <div class="nav-right">
@@ -1724,6 +1901,40 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ PROBLEM ═══════════════════ -->
+  <section class="problem" id="problem">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">The Problem We Tackle</div>
+        <h2>One Scary Message. No One to Ask.</h2>
+        <p>Your mother gets an SMS: “bank account blocked, verify now”. Your father gets a job offer asking for a
+          registration fee. They panic — and every option available today fails them.</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card reveal reveal-delay-1">
+          <div class="pain-mark">✕</div>
+          <h3>Family WhatsApp Groups Bury It</h3>
+          <p>An urgent screenshot drowns under good-morning forwards and birthday wishes. By the time someone replies,
+            the money is gone.</p>
+        </div>
+        <div class="pain-card reveal reveal-delay-2">
+          <div class="pain-mark">✕</div>
+          <h3>AI Chatbots Can't Be Trusted Blindly</h3>
+          <p>A generic chatbot answers — but would you trust it with your parents' savings? There's no human you love
+            confirming the decision.</p>
+        </div>
+        <div class="pain-card reveal reveal-delay-3">
+          <div class="pain-mark">✕</div>
+          <h3>Google Needs Expertise</h3>
+          <p>Searching for answers assumes you already understand the threat. Most elders don't — and scammers count
+            on exactly that.</p>
+        </div>
+      </div>
+      <p class="problem-answer reveal">FamilyShield is built for this exact moment: <strong>AI explains it, family
+          confirms it, and the decision gets recorded</strong> — before anyone clicks, pays, or shares an OTP.</p>
+    </div>
+  </section>
+
   <!-- ═══════════════════ FEATURES ═══════════════════ -->
   <section class="features" id="features">
     <div class="container">
@@ -1792,6 +2003,39 @@
             </svg></div>
           <h3>Enterprise-Grade Security</h3>
           <p>JWT authentication, Google OAuth, encrypted passwords with Argon2, and VAPID-secured push notifications.
+          </p>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon red"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#dc2626"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg></div>
+          <h3>Emergency Guidance</h3>
+          <p>Money already sent or OTP shared? Instant 1930 helpline, cybercrime.gov.in reporting, and bank-freeze
+            steps when every minute counts.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon purple"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#7c3aed"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <polyline points="16 11 18 13 22 9" />
+            </svg></div>
+          <h3>Ask Family + Verdicts</h3>
+          <p>One tap sends the AI analysis to selected members. They reply Safe, Don't touch, Be careful — and the
+            family verdict gets recorded.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon green"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#059669"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg></div>
+          <h3>Hindi + Hinglish</h3>
+          <p>Ask in your own language. The AI explains risk in Hindi, Hinglish, or English — matching how you asked.
           </p>
         </div>
       </div>
@@ -1967,6 +2211,53 @@
     </div>
   </section>
 
+  <!-- ═══════════════════ FAQ ═══════════════════ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">FAQ</div>
+        <h2>Questions Families Ask Us</h2>
+        <p>Everything you need to know before bringing your family on board.</p>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal" open>
+          <summary>What exactly is FamilyShield?</summary>
+          <p>FamilyShield is a private space where your family checks anything suspicious online. Paste a message,
+            link, or screenshot — AI explains the risk in simple words, and your family confirms the decision
+            together. Ask AI. Ask Family. Decide Safely.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>How does a scam check work?</summary>
+          <p>Submit the suspicious content and the AI returns a risk level (High, Medium, Low, or Unable to Assess)
+            with the exact reasons why, plus safe next steps. If you're still unsure, send it to selected family
+            members in one tap — they reply with one-tap verdicts and the final decision gets recorded on the case.
+          </p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Does it work in Hindi?</summary>
+          <p>Yes. Ask in Hindi, Hinglish, or English — the AI answers in the same language you used, including the
+            emergency guidance.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>I already sent money / shared my OTP. What now?</summary>
+          <p>Don't panic — act fast. FamilyShield immediately shows emergency guidance: call the toll-free cyber
+            helpline <strong>1930</strong>, report at <strong>cybercrime.gov.in</strong> within 24 hours, and ask
+            your bank to freeze the transaction. Save every screenshot, SMS, and transaction ID as evidence.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Is my family's data private?</summary>
+          <p>Yes. Families are invite-only via link or QR code. Each case is shared only with the members you choose,
+            and you can delete your chats, cases, shares — even your whole account — at any time.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>How do I get started?</summary>
+          <p>Sign up with email or Google, create your family, and share the invite link or QR code. Members join
+            with one click — no technical knowledge needed, which is exactly the point.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════ CTA ═══════════════════ -->
   <section class="cta" id="cta">
     <div class="cta-bg"></div>
@@ -2068,6 +2359,20 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     reveals.forEach(el => revealObserver.observe(el));
+
+    // FAQ accordion — only one item open at a time
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      item.addEventListener('toggle', () => {
+        if (item.open) {
+          faqItems.forEach(other => {
+            if (other !== item && other.open) {
+              other.open = false;
+            }
+          });
+        }
+      });
+    });
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
